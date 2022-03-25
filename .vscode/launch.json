@@ -9,7 +9,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"program": "${fileDirname}/a.out",
-			"args": ["1", "2", "3"],
+			"args": ["-3"],
 			"cwd": "${fileDirname}",
 			// "preLaunchTask": "cc"
 		}

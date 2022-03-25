@@ -6,7 +6,7 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:43:31 by lbounor           #+#    #+#             */
-/*   Updated: 2022/03/24 15:35:11 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 15:42:06 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,7 @@ int	test_line(char *str)
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]))
-		{
-			if (str[i] == '-' && ft_isdigit(str[i + 1]))
-				i++;
-			else
-				return (1);
-		}
+			i++;
 		else
 			return (1);
 	}
@@ -48,7 +43,15 @@ int	verif_list(char **list)
 	i = 0;
 	while (list[i])
 	{
-		test_line(list[i]);
+		if (list[i][0] == '-' && test_line(list[i] + 1))
+			return (1);
+		if (ft_isdigit(list[i][0]) && test_line(list[i] + 1))
+			return (1);
+		else if (list[i][0] != '-')
+		{
+			if (test_line(list[i]))
+				return (1);
+		}
 		i++;
 	}
 	return (0);

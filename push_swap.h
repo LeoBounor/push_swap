@@ -6,7 +6,7 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:44:02 by lbounor           #+#    #+#             */
-/*   Updated: 2022/03/24 12:00:11 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/03/25 13:54:47 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void	ft_lstclear(t_stack **lst);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(char *str);
+int		ft_isdigit(int c);
 
 #endif
