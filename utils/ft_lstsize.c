@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 16:07:57 by lbounor           #+#    #+#             */
-/*   Updated: 2022/03/28 13:18:11 by lbounor          ###   ########lyon.fr   */
+/*   Created: 2022/03/31 14:32:32 by lbounor           #+#    #+#             */
+/*   Updated: 2022/03/31 14:32:40 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+int	ft_lstsize(t_stack *lst)
 {
-	t_stack	*tmp;
+	int	i;
 
-	if (!stack_b)
-		return ;
-	tmp = stack_b->next;
-	ft_lstadd_front(&stack_a, stack_b);
-	stack_b = tmp;
-	ft_putendl_fd("pa", 1);
-}
-
-void	pb(t_stack *stack_b, t_stack *stack_a)
-{
-	t_stack	*tmp;
-
-	if (!stack_a)
-		return ;
-	tmp = stack_a->next;
-	ft_lstadd_front(&stack_b, stack_a);
-	stack_a = tmp;
-	ft_putendl_fd("pb", 1);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

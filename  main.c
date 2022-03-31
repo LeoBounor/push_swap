@@ -6,7 +6,7 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:43:31 by lbounor           #+#    #+#             */
-/*   Updated: 2022/03/25 15:42:06 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/03/31 16:34:36 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	test_stack(t_stack *stack)
 {
 	while (stack)
 	{
+		printf("%d", stack->index);
+		printf("%s", " : ");
 		printf("%d\n", stack->number);
 		stack = stack->next;
 	}
@@ -111,24 +113,83 @@ int	error_list(t_stack *stack)
 	return (0);
 }
 
+void	*tri_bulle(int *tab, int size)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	i = 0;
+	j = 0;
+	while (i < size - 1)
+	{
+		while (j < (size - i - 1))
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				tmp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (tab);
+}
+
+void	set_index(t_stack *stack)
+{
+	t_stack	*tmp;
+	int		*stack_index;
+	int		size;
+	int		i;
+
+	tmp = stack;
+	size = ft_lstsize(stack);
+	stack_index = malloc(size * (sizeof * stack_index));
+	i = -1;
+	while (tmp)
+	{
+		stack_index[++i] = tmp->number;
+		tmp = tmp->next;
+	}
+	stack_index = tri_bulle(stack_index, size);
+	tmp = stack;
+	while (tmp)
+	{
+		i = -1;
+		while (stack_index[++i])
+		{
+			if (stack_index[i] == tmp->number)
+			{
+				tmp->index = i;
+			}
+		}
+		tmp = tmp->next;
+	}
+}
+
 int	main(int ac, char **av)
 {
-	t_stack	*stack_a;
+	t_stack	*stack;
 
 	if (ac == 2)
 	{
-		stack_a = make_list(av[1]);
-		if (error_list(stack_a))
+		stack = make_list(av[1]);
+		if (error_list(stack))
 			return (0);
-		test_stack(stack_a);
+		set_index(stack);
+		test_stack(stack);
 	}
 	else if (ac > 2)
 	{
-		stack_a = make_arg_list(av + 1);
-		if (error_list(stack_a))
+		stack = make_arg_list(av + 1);
+		if (error_list(stack))
 			return (0);
-		test_stack(stack_a);
+		set_index(stack);
+		test_stack(stack);
 	}
-	ft_lstclear(&stack_a);
+	ft_lstclear(&stack);
 	return (0);
 }
