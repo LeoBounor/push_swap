@@ -1,13 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Leo <Leo@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 13:44:05 by lbounor           #+#    #+#             */
-/*   Updated: 2022/04/14 18:00:37 by Leo              ###   ########lyon.fr   */
+/*   Created: 2022/04/14 20:40:55 by Leo               #+#    #+#             */
+/*   Updated: 2022/04/14 20:41:15 by Leo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+
+t_stack	*ft_lstlast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}

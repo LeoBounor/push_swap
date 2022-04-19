@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Leo <Leo@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 15:49:01 by lbounor           #+#    #+#             */
-/*   Updated: 2022/04/14 21:51:24 by Leo              ###   ########lyon.fr   */
+/*   Created: 2022/03/15 15:54:32 by lbounor           #+#    #+#             */
+/*   Updated: 2022/04/18 16:45:02 by Leo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_lstadd_back(t_stack **alst, t_stack *new)
+void	sa(t_stack **stack_a)
 {
 	t_stack	*tmp;
 
-	if (!*alst)
-		*alst = new;
-	else
-	{
-		tmp = ft_lstlast(*alst);
-		tmp->next = new;
-	}
+	if (!stack_a)
+		return ;
+	tmp = (*stack_a);
+	(*stack_a) = (*stack_a)->next;
+	tmp->next = (*stack_a)->next;
+	(*stack_a)->next = tmp;
+	ft_putendl_fd("sa", 1);
+}
+
+void	sb(t_stack **stack_b)
+{
+	t_stack	*tmp;
+
+	if (!stack_b)
+		return ;
+	tmp = (*stack_b);
+	(*stack_b) = (*stack_b)->next;
+	tmp->next = (*stack_b)->next;
+	(*stack_b)->next = tmp;
+	ft_putendl_fd("sb", 1);
 }

@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: Leo <Leo@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 15:54:32 by lbounor           #+#    #+#             */
-/*   Updated: 2022/03/15 16:07:06 by lbounor          ###   ########lyon.fr   */
+/*   Created: 2022/03/22 15:44:19 by lbounor           #+#    #+#             */
+/*   Updated: 2022/04/14 21:50:03 by Leo              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	sa(t_stack *stack_a)
+void	ra(t_stack **stack_a)
 {
 	t_stack	*tmp;
 
 	if (!stack_a)
 		return ;
-	tmp = (stack_a);
-	(stack_a) = (stack_a)->next;
-	tmp->next = (stack_a)->next;
-	(stack_a)->next = tmp;
-	ft_putendl_fd("sa", 1);
+	tmp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	ft_lstadd_back(stack_a, tmp);
+	tmp->next = NULL;
+	ft_putendl_fd("ra", 1);
 }
 
-void	sb(t_stack *stack_b)
+void	rb(t_stack **stack_b)
 {
 	t_stack	*tmp;
 
 	if (!stack_b)
 		return ;
-	tmp = (stack_b);
-	(stack_b) = (stack_b)->next;
-	tmp->next = (stack_b)->next;
-	(stack_b)->next = tmp;
-	ft_putendl_fd("sb", 1);
+	tmp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	ft_lstadd_back(stack_b, tmp);
+	tmp->next = NULL;
+	ft_putendl_fd("rb", 1);
 }
