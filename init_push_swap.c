@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Leo <Leo@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:41:35 by Leo               #+#    #+#             */
-/*   Updated: 2022/04/18 19:52:27 by Leo              ###   ########lyon.fr   */
+/*   Updated: 2022/05/09 16:15:41 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,15 +118,4 @@ t_stack	*make_arg_list(char **list)
 		ft_lstadd_back(&stack, new);
 	}
 	return (stack);
-}
-
-int	verif_stack_sort(t_stack *stack)
-{
-	while (stack->next)
-	{
-		if (stack->index > stack->next->index)
-			return (1);
-		stack = stack->next;
-	}
-	return (0);
 }

@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   short_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Leo <Leo@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:41:48 by Leo               #+#    #+#             */
-/*   Updated: 2022/04/18 16:59:16 by Leo              ###   ########lyon.fr   */
+/*   Updated: 2022/05/09 16:15:57 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	verif_stack_sort(t_stack *stack)
+{
+	while (stack->next)
+	{
+		if (stack->index > stack->next->index)
+			return (1);
+		stack = stack->next;
+	}
+	return (0);
+}
 
 static int	ft_get_dist(t_stack *stack, int n)
 {
