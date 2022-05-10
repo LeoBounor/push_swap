@@ -6,13 +6,13 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:44:05 by lbounor           #+#    #+#             */
-/*   Updated: 2022/05/09 14:45:10 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/05/10 10:46:07 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	set_index(t_stack **stack)
+static void	set_index(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*stack_index;
@@ -75,7 +75,7 @@ static void	ft_sort_radix(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	ft_sort_short(t_stack **stack_a)
+static void	ft_sort_short(t_stack **stack_a)
 {
 	t_stack	*stack_b;
 
@@ -110,7 +110,6 @@ int	main(int ac, char **av)
 		ft_sort_short(&stack_a);
 	else
 		ft_sort_radix(&stack_a, &stack_b);
-	test_stack(stack_a);
 	ft_lstclear(&stack_a);
 	return (0);
 }

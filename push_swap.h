@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Leo <Leo@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:44:02 by lbounor           #+#    #+#             */
-/*   Updated: 2022/04/18 20:05:53 by Leo              ###   ########lyon.fr   */
+/*   Updated: 2022/05/10 10:33:26 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,12 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 
 //	-------- FONCTION SORT --------
-int		test_line(char *str);
-int		verif_list(char **list);
 t_stack	*make_list(char *list);
 t_stack	*make_arg_list(char **list);
 int		verif_stack_sort(t_stack *stack);
 void	sort_three(t_stack **stack_a);
 void	sort_four(t_stack **stack_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
-int		ft_check_doublons(char **params);
 
 //	-------- FONCTION DE LA LIBFT --------
 void	ft_lstadd_front(t_stack **alst, t_stack *new);

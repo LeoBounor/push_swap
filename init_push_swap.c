@@ -6,13 +6,13 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:41:35 by Leo               #+#    #+#             */
-/*   Updated: 2022/05/09 16:15:41 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/05/10 10:32:45 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	test_line(char *str)
+static int	test_line(char *str)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	test_line(char *str)
 	return (0);
 }
 
-int	ft_check_doublons(char **params)
+static int	ft_check_doublons(char **params)
 {
 	int	i;
 	int	j;
@@ -53,7 +53,7 @@ int	ft_check_doublons(char **params)
 	return (0);
 }
 
-int	verif_list(char **list)
+static int	verif_list(char **list)
 {
 	int	i;
 
