@@ -6,7 +6,7 @@
 #    By: lbounor <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 14:43:37 by lbounor           #+#    #+#              #
-#    Updated: 2022/07/12 16:47:08 by lbounor          ###   ########lyon.fr    #
+#    Updated: 2022/07/12 17:45:55 by lbounor          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = push_swap
 SRCS = push_swap.c						\
 		init_push_swap.c				\
 		short_sort.c					\
-		free_arg_list.c					\
 		checks.c						\
 		utils/ft_isdigit.c 				\
 		utils/ft_atoi.c 				\

@@ -6,7 +6,7 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 17:30:23 by lbounor           #+#    #+#             */
-/*   Updated: 2022/07/12 17:31:34 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/07/12 17:54:08 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	check_args(int argc, char **argv)
 	{
 		argv = ft_split(argv[1], ' ');
 		if (!*argv)
-			return ;
+			error_msg("Error");
 	}
 	else
 		i = 1;

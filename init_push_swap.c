@@ -6,11 +6,25 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:41:35 by Leo               #+#    #+#             */
-/*   Updated: 2022/07/12 17:30:04 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/07/12 17:45:47 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	*free_list(char **list)
+{
+	int	i;
+
+	i = 0;
+	while (list[i])
+	{
+		free(list[i]);
+		i++;
+	}
+	free(list);
+	return (NULL);
+}
 
 t_stack	*make_list(char *list)
 {
