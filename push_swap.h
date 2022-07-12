@@ -6,7 +6,7 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:44:02 by lbounor           #+#    #+#             */
-/*   Updated: 2022/07/12 17:49:33 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/07/12 18:07:59 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <limits.h>
 
 typedef struct s_stack
 {
