@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 11:25:25 by lbounor           #+#    #+#             */
-/*   Updated: 2022/07/12 16:42:48 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/07/12 16:43:20 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static char	ft_isspace(char str)
 		|| str == '\f' || str == '\r' || str == ' ');
 }
 
-int	ft_atoi(const char *str)
+long long	ft_atol(const char *str)
 {
-	char	signe;
-	int		nombre;
+	long long	signe;
+	long long	nombre;
 
 	signe = 1;
 	nombre = 0;

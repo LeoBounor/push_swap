@@ -6,7 +6,7 @@
 /*   By: lbounor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:44:05 by lbounor           #+#    #+#             */
-/*   Updated: 2022/05/10 10:46:07 by lbounor          ###   ########lyon.fr   */
+/*   Updated: 2022/07/12 16:41:58 by lbounor          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,11 @@ static void	ft_sort_short(t_stack **stack_a)
 	t_stack	*stack_b;
 
 	stack_b = NULL;
+	if (ft_lstsize(*stack_a) == 2)
+	{
+		if (verif_stack_sort(*stack_a) == 1)
+			sa(stack_a);
+	}
 	if (ft_lstsize(*stack_a) == 3)
 		sort_three(stack_a);
 	else if (ft_lstsize(*stack_a) == 4)
@@ -93,6 +98,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	check_args(ac, av);
 	if (ac == 2)
 		stack_a = make_list(av[1]);
 	else if (ac > 2)
